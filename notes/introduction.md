@@ -16,4 +16,6 @@ rapidly provisioned and released with minimal management effort or service provi
 ## 4 - Benefits
 1. Scalability: Cloud services can be easily scaled up or down based on demand.
 2. Flexibility: Users have the flexibility to choose and adapt services to meet specific business needs.
-3. Cost-Efficiency: Cloud computing often follows a pay-as-you-go pricing model (usage-based pricing), allowing organizations to pay only for the resources they use.
+3. Cost-Efficiency: Cloud computing often follows a pay-as-you-go pricing model (usage-based pricing), allowing 
+organizations to pay only for the resources they use.
+
