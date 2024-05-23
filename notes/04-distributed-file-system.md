@@ -32,35 +32,91 @@ Storage and processing on the cloud are intimately tied to one another.
 are critical to the computations performed on the cloud.
 - Strategies to reduce the access time and support real-time multimedia access are necessary to satisfy content delivery
 requirements.
+- Sensors feed a continuous stream of data to cloud applications.
+- An increasing number of cloud-based services collect detailed data about their user and information about their services.
+The service providers use the cloud to analyze the data.
 
 
+### 1.3 - Big Data
+The new trend reflects that many applications use data sets that **cannot be stored and processed using local resources**.
 
+Three-dimensional phenomena:
+1. Increased **volume** of data.
+2. Requires increased **processing speed** to processs more data and produce more results.
+3. Involves a **diversity** of data sources and data types
 
 
 
 
 
 ## 2 - Evolution of Storage System
-
+- Dynamic Random Access Memory (DRAM) - 1990 ~ 2003
+  - The density increased from about 1 Gb/in^2 in 1990 to 100 Gb/in^2
+  - The cost has tumbled from about $80/MB to less than $1/MB
+- Hard Disk Drives (HDD) - 1980 ~ 2003
+  - Storage density of has increased by four orders of magnitude from about 0.01 Gb/in^2 to about 100 Gb/in^2
+  - Prices have fallen by five orders of magnitude to about 1 cent/MB.
+  - HDD densities are projected to climb to 1,800 Gb/in^2 by 2016, up from 744 Gb/in^2 in 2011.
+- Solid-state Disk (SSD) interfaces are compatible with the block I/O of HDDs and can replace traditional disks.
+SSDs do not have moving parts, are typically more resistant to physical shock, run silently, and have shorter access
+times and lower latency than HDDs.
+- Solid-state hybrid disks (SSHD): Combines SSD and HDD features.
+- Enterprise flash drives (EFDs): are SSDs with a higher set of specifications, with high I/O performance, reliability, and energy efficiency.
 
 
 
 
 ## 3 - Storage and Data Models
 
+### 3.1 - Storage Model
+A **storage model** describes the layout of a data structure in **physical storage** - a local disk, removable media,
+or storage accessible via the network.
+
+### 3.2 - Data Model
+A **data model** captures the most important **logical aspects** of a data structure in a database.
 
 
+### 3.3 - Cell Storage
+This model reflects the physical organization of several storage media:
+- the primary memory of a computer is organized as an array of memory cells
+-  a secondary storage device, e.g., a disk, is organized in sectors or blocks read and written as a unit.
+
+Cells of the **same size** with **read/write coherence** and **before-or-after atomicity**:
+- read/write coherence: the result of a Read of memory cell M should be the same as the most recent Write to that cell
+- before-or-after atomicity: the result of every Read or Write is the same as if that Read or Write occurred either completely
+before or completely after any other Read or Write.
+
+Read/write coherence and before-or-after atomicity are two highly desirable 
+properties of any storage model, particularly cell storage.
+
+### 3.4 - Journal Storage
+Journal Storage is a system that keeps track of the changes made in a journal. 
+- **Maintains change history**
+- **Quicker restoration post-failure
 
 
+## 4 - Logical & Physical Organization of a File
+- File: a **linear array of cells** stored on a persistent storage device.
+- File Pointer: identifies a cell used as a **starting point** for a read or write operation.
+- The logical organization of file reflects the **data model**, the view of the data from the **application's perspective**
+- The physical organization of file reflects the **storage model**, and describes **the manner the file is stored** on a 
+given **storage media**.
 
-
+  
+## 5 - File Systems
+A file system is a collection of directories; each directory provides information about a set of files.
+- Traditional: Unix File System
+- Network File System (NFS): **Popular** but has **scaling and reliability issues**.
+- Storage Area Networks (SAN): Allows **non-disruptive** changes; can be **expensive**.
+- Parallel File Systems (PFS): **Scalable**, **distributes files** across nodes with a **global naming space**.
 
 
 ## 4 - Unix File System (UFS)
-
-
-
-
+UFS has three important characteristics:
+- Layered design for flexibility.
+- Hierarchical for scalability.
+- Metadata (includes file owner, access rights, etc.) support
+- Inodes store information on persistent media.
 
 
 
@@ -69,21 +125,40 @@ requirements.
 
 
 ## 5 - Network File System (NFS)
-
-
-
-
-
+- Objectives:
+  - Compatibility with UFS.
+  - Integration into existing systems.
+  - Support for different OS clients.
+  - Performance over a network.
+- NFS is based on the **client-server paradigm**: use **Remote Procedure Calls (RPC)** for interaction.
 
 
 ## 6 - General Parallel File System (GPFS)
-
-
-
-
-
-
-
+- Parallel I/O: Essential for **performance** (**concurrent execution of multiple input/output** operations).
+- Concurrency control: Critical for shared access.
+- Design: Supports **large clusters**, large file sizes.
+- Reliability: 
+  - **consistency and synchronization** are ensured by a **distributed locking mechanism**.
+  - Uses write-ahead logs and data striping.
 
 
 ## 7 - Google File System (GFS)
+- Uses commodity components for scalability.
+- Files range from GB to TB.
+- Optimized for append and sequential read operations.
+- Ensures consistency through a master component.
+- Uses large chunks (64 MB) for performance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
