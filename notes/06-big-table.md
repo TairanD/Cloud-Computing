@@ -91,5 +91,82 @@ time**.
 BASE systems are ideal for **web storefronts**, where filling a shopping cart and 
 placing an order is the main priority.
 
+## ACID VS BASE
+- ACID: used in Relational Database Management System (RDBMS) - focus on consistency
+- BASE: used in NoSQL systems - focus on availability
+
+
+## 8 - CAP Theorem
+The CAP theorem states that a distributed system can only provide two out of the three: Consistency, Availability, and Partition Tolerance.
+1. Consistency - Having a **single**, **up-to-date**, readable version of your data available to all clients. 
+This isn’t the same as the consistency we talked about in ACID. Consistency here is concerned 
+with **multiple clients reading the same items from replicated partitions and getting consistent 
+results**.
+2. High availability — Knowing that the distributed database will always allow database clients to 
+update items without delay. Internal communication failures between replicated data shouldn’t 
+prevent updates.
+3. Partition tolerance—The ability of the system to keep responding to client requests even if there’s a communication 
+4. failure between database partitions.
+
+## 9 - NoSQL Databases
+
+NoSQL systems prioritize scalability and availability, often at the expense of immediate consistency. Yet, they ensure
+that data will **be eventually consistent** at some future point in time, instead of enforcing consistency at the time 
+when a transaction is **committed**.
+
+Attributes:
+1. Scalability: efficiently handle large volumes of data.
+2. Resilience: no single point of failure.
+3. Consensus: have built-in support for consensus-based decisions.
+
+<img src="../img/RDBMS-NoSQL.png">
+
+
+## 10 - BigTable: Read and Write Operations
+BigTable employs strategies like "append" for writes and binary search for reads. Data is periodically sorted to maintain
+efficiency.
+
+- Append: Efficiently add new data.
+- Binary Search: Quick retrieval from sorted data.
+- K-way Merge Sort: Periodic sorting of data chunks.
+
+
+## 11. Power Failures and Write Ahead Log (WAL)
+WAL ensures data integrity by recording changes before they are applied, allowing quick recovery after failures.
+
+Mechanism:
+
+Pre-write Logging: Records changes for recovery.
+## 12. Optimizing Read Operations
+BigTable uses indexes and bloom filters to enhance read efficiency, reducing the need to scan entire datasets.
+
+Optimizations:
+
+Indexes: Quick access to data locations.
+Bloom Filters: Probabilistic structures to check data existence.
+15. Scaling BigTable
+Scaling involves strategies like sharding (partitioning data) and consistent hashing to distribute data across multiple machines.
+
+Methods:
+
+Sharding: Distributes data across nodes.
+Consistent Hashing: Balances load without frequent rebalancing.
+## 13. Handling Concurrent Access
+To manage concurrent read/write operations, distributed locks (e.g., Chubby, Zookeeper) are used, ensuring data integrity.
+
+Solution:
+
+Distributed Locks: Prevent simultaneous conflicting operations.
+## 14. Summary of Write and Read Operations
+BigTable’s architecture supports efficient write and read operations, maintaining data integrity and performance across distributed systems.
+
+
+
+
+
+
+
+
+
 
 
