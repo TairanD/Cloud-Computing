@@ -20,7 +20,12 @@ Besides, serverless providers always deploy application-dependent services, also
 
 ### Evolution of Computation Virtualization
 Three Stages:
-1. Virtual machines, such as 
+1. Virtual machines: characterized by **multiple operating systems** spinning up on **one host machine** with the aid of
+**emulation or hypervisor** to support higher isolation and better hardware resource utilization. However, this technology
+incurs **high memory overhead**, which in turn compromises the overall system performance. 
+2. Containers: popularized by Docker, which leverages the **sharing kernel** to **increase deployment speed and portability** while 
+**lowering costs**. The container **decreases the size** of the virtualization unit and **resource occupancy**.
+3. Serverless Computing: 
 
 
 
