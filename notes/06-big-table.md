@@ -1,5 +1,7 @@
 # Big Table
-
+This lecture covers the principles and design considerations of BigTable, a distributed storage system developed by Google. 
+It addresses the limitations of traditional file systems, the benefits of database systems, and the specific mechanisms 
+BigTable employs to achieve efficiency, scalability, and reliability.
 ## 1 - File System
 Traditional file systems offer basic operations such as "read" and "write". However, they struggle with more complex 
 operations like querying specific data or calculating aggregates.

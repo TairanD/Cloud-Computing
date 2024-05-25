@@ -3,8 +3,8 @@
 ## 1 - Virtualization
 Virtualization: a broad concept in providing an abstract environment — virtual hardware or an operating system (os: software) for running applications. 
 
-Virtualization is often synonymous with hardware virtualization, which is fundamental in efficiently delivering **IaaS solutions** 
-for cloud computing.
+Virtualization is often synonymous with hardware virtualization, which is fundamental in efficiently delivering 
+**Infrastructure as a Service (IaaS) solutions** for cloud computing.
 
 Virtualization provides a virtual environment for not only executing applications but also for **storage**, **memory**, and 
 **networking**.
@@ -19,7 +19,7 @@ Virtualization provides a virtual environment for not only executing application
 3. Virtualization Layer: is responsible for **recreating** the same or a different environment where the guest will operate.
 
 ### 2.2 - Cloud Virtualization Reference Model
-<img src="../img/vm-model.png" width = "700">
+<img src="../img/vm-model.png">
 
 ### 2.3 - Increased security
 1. The ability to **control the execution of a guest** in a completely **transparent manner** opens new possibilities for 
@@ -38,8 +38,10 @@ as a single virtual host.
 4. Isolation: virtualization allows providing guests - whether they are operating systems, applications, or other entities - 
 with a completely separate environment, in which they are executed.
 
+<img src="../img/vm-feature.png">
+
 ## 3 - Virtualization System Model
-<img src="../img/vm-system-model.png" width = "700">
+<img src="../img/vm-system-model.png">
 
 At the bottom layer, the model for the **hardware** is expressed in terms of the **Instruction Set Architecture (ISA)**, which
 defines the instruction set for the processor, registers, memory, and interrupt management.
