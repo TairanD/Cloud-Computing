@@ -116,10 +116,39 @@ limits execution to 15 minutes.
 Parallelizing within single function instances can reduce communication and synchronization overhead compared to
 inter-function parallelization.
 
-### 4.10 - 
+### 4.10 - Migration
+Serverless functions require remote fetching of code and dependencies, increasing startup costs and potentially service
+latency during auto-scaling and load balancing, **making the migration unappealing**.
+
+### 4.11 - Burstiness
+Serverless workloads can exhibit significant intensity changes. Studies show that 81% of serverless workloads are bursty,
+making serverless suitable for applications with variable loads.
+
 
 ## 5 - Applications
+### 5.1 - Real-Time Collaboration and Analytics
+Ideal for real-time tools like instant messaging, chatbots, and data analytics, due to their stateless nature 
+and auto-scaling capabilities.
 
+### 5.2 - Urban and Industrial Management
+Serverless services support budget-restricted systems such as smart waste management and disaster recovery, 
+benefiting from the pay-as-you-go model.
+
+### 5.3 - Scientific Computing
+Used for linear algebra problems, large-scale optimization, DNA/RNA computing, and scientific workflows.
+
+### 5.4 - Video Processing and Streaming
+Frameworks like Sprocket leverage serverless for video processing, offering low latency and cost. Serverless is also 
+used in live media streaming and video surveillance.
+
+### 5.5 - System and Software Security
+Serverless computing enhances security for software systems, supports intrusion detection, and ensures data security. 
+It can handle sudden traffic bursts and widespread attacks due to its standalone execution environments.
+
+### 5.6 - Other Applications
+IoT: Suitable for backend services with infrequent, sporadic requests, and capable of handling rapid surges.
+E-Commerce, Banking, and Cryptocurrencies: Scalability attracts these sectors for handling variable loads and 
+ensuring efficient resource use.
 
 
 
